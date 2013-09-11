@@ -13,5 +13,5 @@ snailbait.js
 
 ...along with a js directory containg JavaScript for things such as sprites and behaviors.
 
-Code license: The code is licensed under the Apache 2 license. See apached-2.0-license.txt for details.
+Code license: The code is licensed under the Apache 2 license.  
 Attributions: See ATTRIBUTIONS.txt
