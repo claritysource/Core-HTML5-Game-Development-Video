@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+   <!-- Head........................................................-->
+
+	<head>
+	   <title>Snail Bait</title>
+      <link rel='stylesheet' href='snailbait.css'/>
+   </head>
+
+   <body>
+      <!-- Sounds...................................................-->
+
+      <audio id='soundtrack'>
+        <source src='../../../sounds//soundtrack.mp3' type='audio/mp3'>
+        <source src='../../../sounds//soundtrack.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='chimes-sound' >
+        <source src='../../../sounds//chimes.mp3' type='audio/mp3'>
+        <source src='../../../sounds//chimes.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='whistle-down-sound' >
+        <source src='../../../sounds//whistledown.mp3' type='audio/mp3'>
+        <source src='../../../sounds//whistledown.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='thud-sound' >
+        <source src='../../../sounds//thud.mp3' type='audio/mp3'>
+        <source src='../../../sounds//thud.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='jump-sound' >
+        <source src='../../../sounds//jump.mp3' type='audio/mp3'>
+        <source src='../../../sounds//jump.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='plop-sound' >
+        <source src='../../../sounds//plop.mp3' type='audio/mp3'>
+        <source src='../../../sounds//plop.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='coin-sound' >
+        <source src='../../../sounds//coin.mp3' type='audio/mp3'>
+        <source src='../../../sounds//coin.ogg' type='audio/ogg'>
+      </audio>
+
+      <audio id='explosion-sound' >
+        <source src='../../../sounds//explosion.mp3' type='audio/mp3'>
+        <source src='../../../sounds//explosion.ogg' type='audio/ogg'>
+      </audio>
+      
+      <div id='arena'>
+
+         <!-- Developer backdoor....................................-->
+
+         <div id='developer-backdoor'>
+            <div id='background-offset-readout'></div>
+
+            <div class='group' id='running-slowly-threshold'>
+               <span class='prompt' 
+                     id='running-slowly-prompt'>
+                  Running slowly threshold
+               </span>
+
+               <div class='slider' id='running-slowly-slider'></div>
+
+               <span class='readout' 
+                     id='running-slowly-readout'>40</span>&nbsp;fps
+            </div>
+
+            <div class='group' id='time-rate'>
+               <span class='prompt' 
+                     id='time-rate-prompt'>
+                  Time rate</span>
+
+               <div class='slider' id='time-rate-slider'></div>
+
+               <span class='readout' 
+                     id='time-rate-readout'>100</span>%
+            </div>
+
+            <div class='group' id='collision-rectangles'>
+               <input type='checkbox' 
+                      id='collision-rectangles-checkbox'/>
+               Draw collision rectangles
+            </div>
+
+            <div class='group' id='detect-running-slowly'>
+               <input type='checkbox' 
+                      id='detect-running-slowly-checkbox' checked/>
+               Warn when running slowly
+            </div>
+
+            <div class='group' id='smoking-holes'>
+               <input type='checkbox' 
+                      id='smoking-holes-checkbox' checked/>
+               Smoke
+            </div>
+         </div>
+
+         <!-- Credits...............................................-->
+
+         <div id='credits' class='credits'>
+            <div class='credit'>
+               <div class='title'>~ Game Design and Programming ~</div>
+               <div class='attribution'>
+                  <a style='font-size: 1.25em;' 
+                     href='http://amzn.to/LFsWcL'>
+                    David Geary</a>
+               </div>
+            </div>
+
+            <div class='credit'>
+               <div id='art-title' class='title'>~ Art ~</div>
+
+               <div class='attribution'><b>
+                  <a href='http://lea.verou.me/css3patterns'>CSS3 Patterns Gallery</a>:
+                  </b> Background pattern in CSS by Anna Kassner
+               </div>
+
+               <div class='attribution'><b>
+                  <a href='http://bit.ly/kNzDVc'>Replica Island</a>:
+                  </b> All graphics except the runner and coins
+               </div>
+
+               <div class='attribution'><b>
+                  MJKRZAK People's Sprites:</b> Runner spritesheet (Link no longer available)
+               </div>
+
+               <div class='attribution'><b>
+                  <a href='http://lovershorizon.deviantart.com/art/RPG-Coins-Set-281501013'>LoversHorizon at deviantART</a>:
+                  </b> Coins
+               </div>
+            </div>
+
+            <div class='credit'>
+               <div id='sound-and-music-title' class='title'>~ Sound and Music ~</div>
+
+               <div class='attribution'><b>Soundtrack:</b>
+                  <a href='http://bit.ly/LFtwr8'>Pete Marquardt</a>
+                  from soundclick.com
+               </div>
+
+               <div class='attribution'><b>Explosions:</b>
+                  <a href='http://bit.ly/LFtLCo'>steveygos83</a> from freesound.org
+               </div>
+
+               <div class='attribution'><b>Chime:</b>
+                  <a href='http://bit.ly/LFtSOn'>BristolStories</a> from freesound.org
+               </div>
+
+               <div class='attribution'><b>Coin:</b>
+                  <a href='http://bit.ly/O0IlhS'>Robinhood76</a> from freesound.org
+               </div>
+
+               <div class='attribution'><b>Falling whistle:</b>
+                  <a href='http://bit.ly/LFNf9Z'>Yoyodaman234</a> from freesound.org
+               </div>
+
+               <div class='attribution'><b>Jump whistle:</b>
+                  <a href='http://bit.ly/LFu68n'>HardPCM</a> from freesound.org
+               </div>
+
+               <div class='attribution'><b>Land on platform:</b>
+                  <a href='http://bit.ly/LFudRl'>Walter_Odington</a>
+                  from freesound.org
+               </div>
+
+            </div> <!-- end of credit -->
+
+            <p>
+               <a id='tweet' href="" data-count="none" 
+                  data-via="davidgeary"
+                  hashtags="#html5" target="_blank"
+                  class='tweet-link'>
+                  Tweet my score</a>
+
+               <a id='new-game-link' href='#'>Play again</a>
+            </p>
+            
+         </div> <!-- end of credits -->
+
+         <!-- Running slowly........................................-->
+
+         <div id='running-slowly'>
+
+            <h1>Snail bait is running slowly</h1>
+
+            <p id='slowly-warning'></p>
+            
+            <p>High-performance applications, such as video players or software that backs up your computer, can slow this game down. For best results, hide all other windows on your desktop and close CPU- or GPU- intensive apps when you play HTML5 games.
+            </p>
+
+            <p>You should also upgrade your browser to the latest version and make sure that it has hardware accelerated HTML5 Canvas. Any version of Chrome starting with version 18, for example, has hardware accelerated
+               Canvas. Here is a link where you can download the 
+               <a href='http://www.google.com/chrome/'>latest version of Chrome</a>.
+            </p>
+
+            <a id='slowly-okay' href='#'>
+               Okay
+            </a>
+
+            <a  id='slowly-dont-show' href='#'>
+               Do not show this warning again
+            </a>
+         </div>         
+
+         <div id='toast'></div>
+
+         <!-- Loading screen........................................-->
+
+         <div id='loading'>
+            <div id='loading-title'>Loading...</div>
+            <img id='runner-animated-gif'/>
+         </div>
+
+         <div id='lives'>
+            <img id='life-icon-left'   src='../../../images/runner-small.png'/>
+            <img id='life-icon-middle' src='../../../images/runner-small.png'/>
+            <img id='life-icon-right'  src='../../../images/runner-small.png'/>
+         </div>
+
+         <div id='score'>0</div>
+            
+         <!-- The game canvas.....................................-->
+
+         <canvas id='game-canvas' width='800' height='400'>
+            Your browser does not support HTML5 Canvas.
+         </canvas>
+
+         <!-- Sound and music.....................................-->
+
+         <div id='sound-and-music'>
+            <div id='sound-checkbox-div' class='checkbox-div'>
+               Sound <input id='sound-checkbox' type='checkbox' checked/>
+            </div>
+          
+            <div class='checkbox-div'>
+               Music <input id='music-checkbox' type='checkbox'/>
+            </div>
+         </div>
+
+         <!-- Instructions........................................-->
+
+         <div id='instructions'>
+            <div class='keys'>
+               d / k
+               <div class='explanation'>move left/right</div>
+            </div>
+
+            <div class='keys'>
+               j / f <div class='explanation'>jump</div>
+            </div>
+
+            <div class='keys'>
+               p <div class='explanation'>pause</div>
+            </div>
+
+            <!-- Copyright...........................................-->
+         
+            <div id='copyright'> &#169;2012 David Geary</div>
+         </div>
+      </div>
+
+      <!-- JavaScript................................................-->
+
+      <script src='js/requestNextAnimationFrame.js'></script>
+      <script src='js/animationTimer.js'></script>
+      <script src='js/stopwatch.js'></script>
+      <script src='js/sprites.js'></script>
+      <script src='js/behaviors/animator.js'></script>
+      <script src='js/behaviors/cycle.js'></script>
+      <script src='js/behaviors/pulse.js'></script>
+      <script src='js/behaviors/bounce.js'></script>
+      <script src='js/sprites/fireParticle.js'></script>
+      <script src='js/sprites/smokeBubble.js'></script>
+      <script src='js/sprites/smokingHole.js'></script>
+      <script src='js/components/slider.js'></script>
+      <script src='js/timeSystem.js'></script>
+      <script src='snailbait.js'></script>
+  </body>
+</html>

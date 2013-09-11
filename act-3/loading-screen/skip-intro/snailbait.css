@@ -1,0 +1,319 @@
+body {
+   /* Background from CSS3 Patterns Gallery by Anna Kassner */
+
+   background-color: #6d6aff;
+
+   background-image:
+      repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+      linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+      linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+
+   background-size: 70px 120px;
+}
+
+#arena {
+   margin: 0 auto;
+   width: 800px;
+   height: 400px;
+}
+
+#game-canvas {
+   cursor: none;
+   border: 1px solid blue;
+
+   -webkit-transition: opacity 5.0s;
+   -moz-transition: opacity 5.0s;
+   -o-transition: opacity 5.0s;
+   transition: opacity 5.0s;
+
+   display: none;
+   opacity: 0;
+}
+         
+#score {
+   font: 46px fantasy;
+   text-align: center;
+   color: #ff0;
+   text-shadow: 2px 2px 4px rgba(0,0,80,1.0);
+
+   -webkit-transition: opacity 0.5s;
+   -moz-transition: opacity 0.5s;
+   -o-transition: opacity 0.5s;
+   transition: opacity 0.5s;
+
+   opacity: 0;
+   display: none;
+}
+
+#toast {
+   position: absolute;
+   margin-top: 120px;
+   width: 820px;
+   font: 40px fantasy;
+   text-align: center;
+   color: #ff6;
+   text-shadow: 2px 2px 4px rgb(0,0,0);
+
+   -webkit-transition: opacity 0.5s;
+   -moz-transition: opacity 0.5s;
+   -o-transition: opacity 0.5s;
+   transition: opacity 0.5s;
+
+   z-index: 1;
+   opacity: 0;
+   display: none;
+}
+
+#lives {
+   position: absolute;
+   margin-top: 20px;
+   margin-left: 5px;
+
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+
+   display: none;
+   opacity: 0;
+}
+
+#life-icon-left {
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+}
+
+#life-icon-middle {
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+}
+
+#life-icon-right {
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+}
+
+.credits {
+   position: absolute;
+   margin-left: 50px;
+   margin-top: 5px;
+   padding-bottom: 20px;
+   text-align: center;
+   width: 630px;
+   background: rgba(0,0,0,0.4);
+   background: rgba(255,255,230,0.9);
+   border: thin solid blue;
+   padding-top: 20px;
+   padding-left: 40px;
+   padding-right: 40px;
+
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+
+   -webkit-box-shadow: rgba(0,0,0,0.5) 8px 8px 16px;
+   -moz-box-shadow: rgba(0,0,0,0.5) 8px 8px 16px;
+   -o-box-shadow: rgba(0,0,0,0.5) 8px 8px 16px;
+   box-shadow: rgba(0,0,0,0.5) 8px 8px 16px;
+
+   border-radius: 10px;
+
+   opacity: 0;
+   display: none;
+   z-index: 2;
+}
+
+#credits a:hover {
+   color: blue;
+   text-shadow: 1px 1px 1px rgba(0,0,200,0.5);
+}
+
+#credits p {
+   margin-top: 20px;
+   margin-bottom: 10px;
+   font: 24px fantasy;
+   color: yellow;
+   text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+   color: blue;
+   text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+}
+
+#credits .attribution {
+   font: 17px fantasy;
+   color: blue;
+   text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+}
+
+#credits .title {
+   margin-bottom: 10px;
+   font-size: 25px;
+   color: blue;
+   text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+}
+
+#new-game-link {
+  margin-top: 10px;
+  float: right;
+  margin-right: 20px;
+  font-size: 0.9em;
+}
+
+#art-title {
+   margin-top: 20px;
+}
+
+#sound-and-music-title {
+   margin-top: 20px;
+}
+
+#instructions {
+   margin-left: 198px;
+   padding-left: 10px;
+   padding-top: 10px;
+
+   -webkit-transition: opacity 5s;
+   -moz-transition: opacity 5s;
+   -o-transition: opacity 5s;
+   transition: opacity 5s;
+
+   color: #ff0;
+   font-size: 0.95em;
+   display: none;
+   opacity: 0;
+}
+
+.keys {
+   color: blue;
+   text-shadow: 1px 1px 1px rgba(255,255,0,1.0);
+   background: rgba(0,0,0,0.1);
+   border: thin solid rgba(0,0,0,0.20);
+   border-radius: 5px;
+   margin-left: 10px;
+   padding-right: 10px;
+   padding-left: 10px;
+   padding-bottom: 5px;
+
+   display: inline;
+}
+
+.explanation {
+   color: #ff0;
+   text-shadow: 1px 1px 1px rgba(0,0,0,1.0);
+   display: inline;
+   margin-top: 5px;
+   padding-right: 5px;
+   padding-left: 5px;
+   padding-bottom: 2px;
+}
+
+#copyright {
+   float: right;
+   margin-right: 15px;
+   padding: 2px;
+   color: rgb(40, 40, 255);
+   text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+   font-size: 0.85em;
+   display: none;
+   opacity: 0;
+
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+}
+
+#sound-and-music {
+   position: absolute;
+   margin-left: 20px;
+   margin-top: 9px;
+   color: #ff0;
+   text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+   background: rgba(0,0,0,0.1);
+   border-radius: 5px;
+   border: thin solid rgba(0,0,0,0.20);
+   padding-top: 2px;
+   padding-bottom: 2px;
+   padding-left: 10px;
+   padding-right: 10px;
+   z-index: 1;
+
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+
+   font-size: 0.9em;
+   opacity: 0;
+   display: none;
+}
+
+.checkbox-div {
+   display: inline;
+   text-shadow: 1px 1px 1px blue;
+}
+
+#sound-checkbox-div {
+   margin-right: 10px;
+}
+
+#loading {
+   position: absolute;
+   margin-top: 80px;
+   width: 790px;
+   font: 55px fantasy;
+   text-align: center;
+
+   -webkit-transition: opacity 2.0s;
+   -moz-transition: opacity 2.0s;
+   -o-transition: opacity 2.0s;
+   transition: opacity  2.0s;
+}
+
+#loading-title {
+   padding-left: 40px;
+   padding-bottom: 30px;
+   color: #ff6;
+   text-shadow: 2px 2px 4px rgb(0,0,0);
+
+   -webkit-transition: opacity 5.0s;
+   -moz-transition: opacity 5.0s;
+   -o-transition: opacity 5.0s;
+   transition: opacity  5.0s;
+
+   opacity: 0;
+   display: none;
+}
+
+#runner-animated-gif {
+   margin: 0 auto;
+   border: thin solid rgba(0, 0, 255, 0.7);
+   border-radius: 60px 60px 60px;
+   padding: 30px;
+   margin-top: 20px;
+
+   /* Radial gradient generated at http://www.colorzilla.com/gradient-editor */ 
+
+   background: -moz-radial-gradient(center, ellipse cover, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f2f6f8), color-stop(50%,#d8e1e7), color-stop(51%,#b5c6d0), color-stop(100%,#e0eff9));
+   background: -webkit-radial-gradient(center, ellipse cover, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+   background: -o-radial-gradient(center, ellipse cover, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+   background: -ms-radial-gradient(center, ellipse cover, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+   background: radial-gradient(ellipse at center, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 );
+
+   -webkit-transition: opacity 5.0s;
+   -moz-transition: opacity 5.0s;
+   -o-transition: opacity 5.0s;
+   transition: opacity  5.0s;
+
+   opacity: 0;
+   display: none;
+}

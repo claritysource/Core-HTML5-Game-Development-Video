@@ -1,0 +1,27 @@
+body {
+   background: url('../../../images/background-webpage.jpg');
+   margin: 0;
+   padding: 0;
+}
+
+#arena {
+   margin: 0 auto;
+   width: 800px;
+   height: 400px;
+}
+         
+#score {
+   font: 46px fantasy;
+   text-align: center;
+   color: #ff0;
+   text-shadow: 2px 2px 4px rgba(0,0,80,1.0);
+}
+ 
+#fps {
+   position: absolute;
+   margin-top: -2em;
+   z-index: 1;
+   color: yellow;
+   text-shadow: 1px 1px 1px rgb(0,0,80);
+   font: bold 20px fantasy;
+}

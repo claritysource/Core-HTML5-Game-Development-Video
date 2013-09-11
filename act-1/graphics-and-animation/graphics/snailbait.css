@@ -1,0 +1,10 @@
+body {
+   background: url('../../../images/background-webpage.jpg');
+}
+
+#arena {
+   margin: 0 auto;
+   margin-top: 30px;
+   width: 800px;
+   height: 400px;
+}
