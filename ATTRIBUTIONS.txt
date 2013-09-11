@@ -1,0 +1,27 @@
+Snail Bait uses the following open-source graphics, sound, and music:
+
+Graphics:
+--------
+
+Replica Island graphics. Most of the graphics for the game come from this popular open source Android game.
+
+The runner sprite: Created by MJKRZAK from the people's sprites website (no longer active). The original sprite was grayscale. David Geary added the runner's clothes.
+
+Coins: LoversHorizon at deviantART
+
+The CSS3 pattern used for the background. From lea.verou.me/css3patterns and implemented by Anna Kassner
+
+Music:
+-----
+
+Pete Marquardt created the game's soundtrack (soundclick.com)
+
+Sound effects:
+-------------
+
+steveygoes83 created the explosion sound effect (freesound.org)
+BristolStories created the jewel sound effect (freesound.org)
+Robinhood76 created the coin sound effect (freesound.org)
+Yoyodaman234 created the falling whistle sound effect (freesound.org)
+HardPCM created the jump whistle sound effect (freesound.org)
+Walter_Odington created the thud sound effect (freesound.org)
