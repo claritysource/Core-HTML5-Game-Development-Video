@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <!-- Head........................................................-->
+
+	<head>
+	   <title>Snail Bait</title>
+      <link rel='stylesheet' href='snailbait.css'/>
+   </head>
+
+   <body>
+      <div id='arena'>
+
+         <div id='toast'></div>
+
+         <div id='score'>0</div>
+         <div id='fps'></div>
+            
+         <!-- The game canvas.....................................-->
+
+         <canvas id='game-canvas' width='800' height='400'>
+            Your browser does not support HTML5 Canvas.
+         </canvas>
+      </div>
+
+      <!-- JavaScript................................................-->
+
+      <script src='js/requestNextAnimationFrame.js'></script>
+      <script src='js/animationTimer.js'></script>
+      <script src='js/stopwatch.js'></script>
+      <script src='js/sprites.js'></script>
+      <script src='js/behaviors/cycle.js'></script>
+      <script src='js/behaviors/pulse.js'></script>
+      <script src='js/behaviors/bounce.js'></script>
+      <script src='snailbait.js'></script>
+  </body>
+</html>
